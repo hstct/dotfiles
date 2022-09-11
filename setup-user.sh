@@ -115,7 +115,6 @@ link ".config/systemd/user/waybar-updates.timer"
 link ".config/systemd/user/wl-clipboard-manager.service"
 link ".config/systemd/user/wlsunset.service"
 link ".config/tmux"
-link ".config/transmission/settings.json"
 link ".config/tridactyl"
 link ".config/udiskie"
 link ".config/USBGuard"
@@ -221,7 +220,7 @@ else
 fi
 
 echo "Ignoring further changes to often changing config"
-git update-index --assume-unchanged ".config/transmission/settings.json"
+# git update-index --assume-unchanged ".config/transmission/settings.json"
 
 echo "Configure repo-local git settings"
 git config user.email "code@elmc.at"
