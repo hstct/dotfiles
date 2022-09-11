@@ -1,0 +1,12 @@
+[include]
+  path = ~/.config/git/common
+
+[user]
+  name = "Tobias Grigo"
+  email = grigo@atix.de
+  signingkey = 0x3A2CE0219BE29E2E
+
+[url "git@github.com:ATIX-AG"]
+  insteadOf = https://github.com/ATIX-AG
+
+# vim:ft=ini

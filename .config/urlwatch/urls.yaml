@@ -1,0 +1,556 @@
+---
+name: "aegis"
+url: "https://github.com/beemdevelopment/Aegis/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flex-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip: re
+  - strip
+max_tries: 30
+---
+name: "android-password-store"
+url: "https://github.com/android-password-store/Android-Password-Store/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "antennapod"
+url: "https://github.com/AntennaPod/AntennaPod/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "bash-language-server"
+url: "https://github.com/mads-hartmann/bash-language-server/tags"
+filter:
+  - xpath: (//div[contains(@class,"commit js-details-container Details")]//h4//a)[1]
+  - html2text
+  - strip
+max_tries: 30
+---
+name: "black-hole"
+url: "https://github.com/Sangwan5688/BlackHole/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "bromite"
+url: "https://raw.githubusercontent.com/bromite/bromite/master/CHANGELOG.md"
+max_tries: 30
+---
+name: "browserpass"
+url: "https://github.com/browserpass/browserpass-extension/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "buku"
+url: "https://github.com/jarun/buku/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "croc"
+url: "https://github.com/schollz/croc/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "curlie"
+url: "https://github.com/rs/curlie/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "delta"
+url: "https://github.com/dandavision/delta/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "earlyoom"
+url: "https://github.com/rfjakob/earlyoom/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "etar"
+url: "https://github.com/Etar-Group/Etar-Calendar/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "fairemail"
+url: "https://raw.githubusercontent.com/M66B/FairEmail/master/CHANGELOG.md"
+max_tries: 30
+---
+name: "fd"
+url: "https://github.com/sharkdp/fd/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "fluffychat"
+url: "https://gitlab.com/famedly/fluffychat/-/raw/main/CHANGELOG.md"
+max_tries: 30
+---
+name: "fzf"
+url: "https://github.com/junegunn/fzf/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "geometric-weather"
+url: "https://github.com/WangDaYeeeeee/GeometricWeather/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "gitea"
+url: "https://github.com/go-gitea/gitea/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "gocryptfs"
+url: "https://github.com/rfjakob/gocryptfs/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "goimapnotify"
+url: "https://gitlab.com/shackra/goimapnotify/-/tags"
+filter:
+  - xpath: (//a[contains(@class,"item-title ref-name")])[1]
+  - html2text
+max_tries: 30
+---
+name: "grub-btrfs"
+url: "https://github.com/Antynea/grub-btrfs/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "i3ipc-python"
+url: "https://github.com/acrisci/i3ipc-python/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "infinity-for-reddit"
+url: "https://github.com/Docile-Alligator/Infinity-For-Reddit/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "kitty"
+url: "https://github.com/kovidgoyal/kitty/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "kitty config"
+url: "https://sw.kovidgoyal.net/kitty/_downloads/433dadebd0bf504f8b008985378086ce/kitty.conf"
+max_tries: 30
+---
+name: "kitty changelog"
+url: "https://raw.githubusercontent.com/kovidgoyal/kitty/master/docs/changelog.rst"
+max_tries: 30
+---
+name: "lazygit"
+url: "https://github.com/jesseduffield/lazygit/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "light"
+url: "https://github.com/haikarainen/light/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "mako"
+url: "https://github.com/emersion/mako/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "mpv"
+url: "https://github.com/mpv-player/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "neomutt"
+url: "https://github.com/neomutt/neomutt/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "newpipe"
+url: "https://github.com/TeamNewPipe/NewPipe/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "newsboat"
+url: "https://github.com/newsboat/newsboat/tags"
+filter:
+  - xpath: (//div[contains(@class,"commit js-details-container Details")]//h4//a)[1]
+  - html2text
+  - strip
+max_tries: 30
+---
+name: "p10k"
+url: "https://github.com/romkatv/powerlevel10k/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "prettier"
+url: "https://github.com/prettier/prettier/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "python-black"
+url: "https://github.com/ambv/black/tags"
+filter:
+  - xpath: (//div[contains(@class,"commit js-details-container Details")]//h4//a)[1]
+  - html2text
+  - strip
+max_tries: 30
+---
+name: "python-jsonrpc-server"
+url: "https://github.com/palantir/python-jsonrpc-server/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "python-language-server"
+url: "https://github.com/palantir/python-language-server/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "qksms"
+url: "https://github.com/moezbhatti/qksms/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "redreader"
+url: "https://github.com/QuantumBadger/RedReader/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "ripgrep"
+url: "https://github.com/BurntSushi/ripgrep/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "rocket.chat.electron"
+url: "https://github.com/RocketChat/Rocket.Chat.Electron"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "shfmt"
+url: "https://github.com/mvdan/sh/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "simple-calculator"
+url: "https://github.com/SimpleMobileTools/Simple-Calculator/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "simple-clock"
+url: "https://github.com/SimpleMobileTools/Simple-Clock/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "simple-contacts"
+url: "https://github.com/SimpleMobileTools/Simple-Contacts/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "simple-dialer"
+url: "https://github.com/SimpleMobileTools/Simple-Dialer/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "simple-gallery"
+url: "https://github.com/SimpleMobileTools/Simple-Gallery/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "slide"
+url: "https://github.com/Haptic-Apps/Slide/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "slurp"
+url: "https://github.com/emersion/slurp/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "stylua"
+url: "https://github.com/JohnnyMorganz/StyLua/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "swappy"
+url: "https://github.com/jtheoof/swappy/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "sway"
+url: "https://github.com/swaywm/sway/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "swaybg"
+url: "https://github.com/swaywm/swaybg/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "swaylock"
+url: "https://github.com/swaywm/swaylock/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "swaync"
+url: "https://github.com/ErikReider/SwayNotificationCenter/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "systembus-notify"
+url: "https://github.com/rfjakob/systembus-notify/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "tmux"
+url: "https://raw.githubusercontent.com/tmux/tmux/master/CHANGES"
+max_tries: 30
+---
+name: "tridactyl"
+url: "https://raw.githubusercontent.com/tridactyl/tridactyl/master/CHANGELOG.md"
+max_tries: 30
+---
+name: "twidere-x"
+url: "https://github.com/TwidereProject/TwidereX-Android/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "urlscan"
+url: "https://github.com/firecat53/urlscan/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "voice"
+url: "https://github.com/PaulWoitaschek/Voice/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "waybar"
+url: "https://github.com/Alexays/Waybar/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "weechat"
+url: "https://github.com/weechat/weechat/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "wl-clipboard"
+url: "https://github.com/bugaevc/wl-clipboard/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "wlroots"
+url: "https://github.com/swaywm/wlroots/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "wluma"
+url: "https://github.com/maximbaz/wluma/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "wofi"
+url: "https://hg.sr.ht/~scoopta/wofi/tags"
+filter:
+  - css: ".event-list h4>a"
+  - html2text
+max_tries: 30
+---
+name: "xdg-desktop-portal-wlr"
+url: "https://github.com/emersion/xdg-desktop-portal-wlr/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "xplr"
+url: "https://github.com/sayanarijit/xplr/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "yt-dlp"
+url: "https://github.com/yt-dlp/yt-dlp/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---
+name: "zk"
+url: "https://github.com/mickael-menu/zk/releases"
+filter:
+  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
+  - html2text: re
+  - strip
+max_tries: 30
+---

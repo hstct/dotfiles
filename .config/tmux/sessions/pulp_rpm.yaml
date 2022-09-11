@@ -1,0 +1,22 @@
+session_name: pulp_rpm
+start_directory: ~/dev/pulp/
+windows:
+  - window_name: pulp_rpm   
+    start_directory: pulp_rpm
+    focus: true
+    panes:
+      - shell_command:
+        - source ./venv/bin/activate
+        - ls
+  - window_name: vagrant-box
+    start_directory: pulp_installer
+    shell_command_before:
+      - vagrant up pulp3-source-fedora36
+      - vagrant ssh pulp3-source-fedora36
+    panes:
+      - shell_command:
+        - clear
+        - pjournal
+      - shell_command:
+        - clear
+        - workon pulp

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+menu=$(echo "firefox\nqutebrowser\ncopy to clipboard\nplay" | dmenu -p browser)
+
+case $menu in
+  "firefox")
+    firefox "$@" &
+    ;;
+  "qutebrowser")
+    qutebrowser "$@" &
+    ;;
+  "copy to clipboard")
+    echo "$@" | wl-copy
+    ;;
+  "play")
+    mpv "$@" &
+    ;;
+esac

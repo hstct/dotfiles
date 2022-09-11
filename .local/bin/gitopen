@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+if ! git rev-parse --git-dir 1>/dev/null 2>&1; then
+  echo "Not a git repo"
+  exit 1
+fi
+
+REMOTE="origin"
+
+if [[ $# -ge 1 ]]; then
+  REMOTE="$1"
+fi
+
+REMOTEURL=$(git remote get-url "$REMOTE")
+
+if [[ "$REMOTEURL" =~ ^http ]]; then
+  URL="$REMOTEURL"
+elif [[ "$REMOTEURL" =~ git.atix.de[^/]*(.*).git$ ]]; then
+  URL="https://git.atix.de${BASH_REMATCH[1]}"
+elif [[ "$REMOTEURL" =~ github.com:(.*).git$ ]]; then
+  URL="https://github.com/${BASH_REMATCH[1]}"
+else
+  echo "Remote URL '${REMOTEURL}' not supported"
+  exit 1
+fi
+
+xdg-open "$URL"

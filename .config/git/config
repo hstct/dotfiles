@@ -1,0 +1,31 @@
+[includeIf "gitdir:~/dev/pulp/"]
+  path = ~/.config/git/work
+
+[includeIf "gitdir:~/dev/oci/"]
+  path = ~/.config/git/work
+
+[includeIf "gitdir:~/dev/orcharhino/"]
+  path = ~/.config/git/work
+
+[includeIf "gitdir:~/dev/foreman/"]
+  path = ~/.config/git/work
+
+[includeIf "gitdir:~/dev/misc/"]
+  path = ~/.config/git/work
+
+[includeIf "gitdir:~/dev/personal/"]
+  path = ~/.config/git/home
+
+[includeIf "gitdir:~/.dotfiles/"]
+  path = ~/.config/git/home
+
+[includeIf "gitdir:~/.password-store/"]
+  path = ~/.config/git/home
+
+[include]
+  path = ~/.config/git/common
+
+[sendemail]
+  annotate = yes
+
+# vim:ft=ini

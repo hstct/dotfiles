@@ -1,0 +1,44 @@
+#!/bin/bash
+
+version="v0.3.0"
+
+alphabet_title_search() {
+  open_title "$(buku -p -f 3 | sed -E "/waiting for input/d" | sort -k 2 | dmenu)"
+}
+
+open_title() {
+  echo "$1" | cut -d ' ' -f 1 | xargs --no-run-if-empty buku -o
+}
+
+tag_search() {
+  tagSearch=$(buku --np -t | sed -E "/waiting for input/d" | sed -e 's/^[ \t]*//' | dmenu | cut -d ' ' -f 2)
+  if [[ $tagSearch ]]; then
+    title=$(buku -s "$tagSearch" -f 3 | sed -E "/waiting for input/d" | dmenu)
+    printf "$title"
+    if [[ $title ]]; then
+      open_title "$title"
+    else
+      tag_search
+    fi
+  fi
+}
+
+number_title_search() {
+  open_title "$(buku -p -f 3 | dmenu)"
+}
+
+if [ "$1" == "--help" ]; then
+  echo "Run the script, start typing until the desired bookmark is selected."
+  echo "buku and dmenu must be installed."
+  exit 0
+elif [ "$1" == "--version" ]; then
+  echo "buku-dmenu $version"
+  exit 0
+elif [ "$1" == "-t" ] || [ "$1" == "--tags" ]; then
+  tag_search
+elif [ "$1" == "-a" ] || [ "$1" == "--alphabetized" ]; then
+  alphabet_title_search
+else
+  number_title_search
+fi
+pkill dmenu

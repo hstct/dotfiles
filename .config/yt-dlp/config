@@ -1,0 +1,14 @@
+--add-metadata
+--xattrs
+--xattr-set-filesize
+--geo-bypass
+--downloader aria2c
+--downloader-args '-j 16 -s 16 -x 16 -k 1M'
+--output ~/Downloads/youtube/%(title)s.%(ext)s
+--restrict-filenames
+--write-info-json
+--metadata-from-title
+--prefer-free-formats
+--merge-output-format mkv
+--sub-langs en
+--exec '${XDG_CONFIG_HOME:-$HOME/.config}/yt-dlp/postcmd.sh {}'

@@ -1,0 +1,19 @@
+#!/bin/bash
+set -euo pipefail
+trap 'pkill -P $$' EXIT
+
+vpn() {
+  if ($(nmcli --terse -f name conn show --active | grep -q atix)); then
+    icon="<span foreground='#928374'></span>"
+    class=on
+  else
+    icon=''
+    class=off
+  fi
+  tooltip="Connected to atix"
+  printf '{"text": "%s", "tooltip": "%s", "class": "%s"}\n' "$icon" "$tooltip" "$class"
+}
+
+vpn
+
+ip monitor link | while read -r line; do vpn; done

@@ -1,0 +1,28 @@
+columnate = false
+color = "auto"
+quiet = false
+default_profile = "default"
+
+[profiles.default]
+  repo = "/var/cache/pacman/hstct-local/hstct-local.db.tar"
+  add_params = ["-s"]
+  rm_params = ["-s"]
+  ignore_aur = []
+  require_signature = true
+  backup = true
+  backup_dir = ""
+  interactive = false
+  pre_action = ""
+  post_action = ""
+
+[profiles.nobackup]
+  repo = "/var/cache/pacman/hstct-local/hstct-local.db.tar"
+  add_params = ["-s"]
+  rm_params = ["-s"]
+  ignore_aur = []
+  require_signature = true
+  backup = false
+  backup_dir = ""
+  interactive = false
+  pre_action = ""
+  post_action = ""

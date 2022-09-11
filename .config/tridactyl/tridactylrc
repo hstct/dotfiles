@@ -1,0 +1,73 @@
+" vim: ft=vim
+sanatise tridactyllocal tridactylsync
+
+colorscheme gruvbox-material
+
+set smoothscroll true
+set allowautofocus false
+set hintuppercase false
+set tabopencontaineraware true
+set newtab about:blank
+set searchengine duckduckgo
+set editor nvim
+set visualenterauto false
+set findcase sensitive
+
+set gimode nextinput
+set tabclosedpinned false
+set relatedopenpos related
+set tabopenpos last
+set followpagepatterns.next \\b(forward|next|more|older)\\b|(>>|»)$|(>|»|▸|►)$|次|下|后
+set followpagepatterns.prev \\b(back|prev(ious)?|less|newer)\\b|(<|«|◂|◄)$|前|上
+set hintchars hjklasdfgyuiopqwertnmzcxvb
+set hinfiltermode vimperator-reflow
+set modeindicatorshowkeys true
+
+bind gp pin
+
+" yank repository url
+bind yr composite js document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+" yank url and open with mpv
+bind yv composite url2args | exclaim_quiet mpv
+" yank url and download via yt-dlp
+bind yd composite url2args | exclaim_quiet kitty yt-dlp
+
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+bind ,<Space> nohlsearch
+
+bind gd tabdetach
+bind gD composite tabduplicate; tabdetach
+
+bind --mode=ex      <C-a> text.beginning_of_line
+bind --mode=insert  <C-a> text.beginning_of_line
+bind --mode=input   <C-a> text.beginning_of_line
+bind --mode=ex      <C-e> text.end_of_line
+bind --mode=insert  <C-e> text.end_of_line
+bind --mode=input   <C-e> text.end_of_line
+bind --mode=ex      <C-f> text.forward_char
+bind --mode=insert  <C-f> text.forward_char
+bind --mode=input   <C-f> text.forward_char
+bind --mode=ex      <C-b> text.backward_char
+bind --mode=insert  <C-b> text.backward_char
+bind --mode=input   <C-b> text.backward_char
+bind --mode=ex      <C-k> text.kill_line
+bind --mode=insert  <C-k> text.kill_line
+bind --mode=input   <C-k> text.kill_line
+bind --mode=ex      <C-u> text.backward_kill_line
+bind --mode=insert  <C-u> text.backward_kill_line
+bind --mode=input   <C-u> text.backward_kill_line
+bind --mode=ex      <C-w> text.backward_kill_word
+bind --mode=insert  <C-w> text.backward_kill_word
+bind --mode=input   <C-w> text.backward_kill_word
+
+bind --mode=ex <C-n> ex.next_history
+bind --mode=ex <C-p> ex.prev_history
+bind --mode=ex <Tab> ex.next_completion
+bind --mode=ex <S-Tab> ex.prev_completion
+
+guiset_quiet statuspanel right
+guiset_quiet hoverlink right
+guiset_quiet tabs count

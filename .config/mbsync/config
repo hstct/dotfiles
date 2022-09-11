@@ -1,0 +1,39 @@
+IMAPStore personal-remote
+Host imap.mailbox.org
+User elmcat@mailbox.org
+PassCmd "pass show email/mailbox.org/pass"
+SSLType IMAPS
+
+MailDirStore personal-local
+Path ~/.mail/personal/
+Inbox ~/.mail/personal/INBOX
+SubFolders Verbatim
+
+Channel personal
+Far :personal-remote:
+Near :personal-local:
+Create Both
+Expunge Both
+CopyArrivalDate yes
+Patterns *
+SyncState *
+
+IMAPStore work-remote
+Host outlook.office365.com
+User grigo@atix.de
+PassCmd "pass show email/atix.de/pass"
+SSLType IMAPS
+
+MailDirStore work-local
+Path ~/.mail/work/
+Inbox ~/.mail/work/INBOX
+SubFolders Verbatim
+
+Channel work
+Far :work-remote:
+Near :work-local:
+Create Both
+Expunge Both
+CopyArrivalDate yes
+Patterns *
+SyncState *

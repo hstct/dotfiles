@@ -1,0 +1,5 @@
+REMOTE_ADDR=pkgbuild-repo
+LOCAL_PATH=/var/cache/pacman/hstct-local/
+REMOTE_PATH=/public_html/repo
+LOCAL_PATH_AURUTILS=/home/hstct/.local/share/aurutils/
+REMOTE_PATH_AURUTILS=~/aurutils-cache

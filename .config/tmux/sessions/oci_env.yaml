@@ -1,0 +1,36 @@
+session_name: pulp
+start_directory: ~/dev/oci/
+windows:
+  - window_name: oci_env
+    start_directory: oci_env
+    focus: true
+    panes:
+      - shell_command:
+        - ocu
+        - ocl
+      - shell_command:
+        - oci --help
+  - window_name: pulp_deb
+    start_directory: pulp_deb
+    shell_command_before:
+      - source venv/bin/activate
+    panes:
+      - shell_command:
+        - clear
+        - ls
+  - window_name: pulpcore
+    start_directory: pulpcore
+    shell_command_before:
+      - source venv/bin/activate
+    panes:
+      - shell_command:
+        - clear
+        - ls
+  - window_name: pulp_rpm
+    start_directory: pulp_rpm
+    shell_command_before:
+      - source venv/bin/activate
+    panes:
+      - shell_command:
+        - clear
+        - ls

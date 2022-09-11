@@ -1,0 +1,16 @@
+session_name: forklift
+start_directory: ~/dev/foreman/forklift
+windows:
+  - window_name: rails-server
+    shell_command_before:
+      - vagrant up centos8-katello-devel-stable
+      - vagrant ssh centos8-katello-devel-stable
+    panes:
+      - shell_command:
+        - cd foreman
+        - clear
+        - ./node_modules/.bin/webpack-dev-server-without-h2 --config config/webpack.config.js --disable-host-check
+      - shell_command:
+        - cd foreman
+        - clear
+        - bundle exec rails s -b 192.168.121.245
