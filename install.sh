@@ -341,7 +341,7 @@ arch-chroot /mnt chown -R "$user:$user" "/var/cache/pacman/${user}-local/"
 
 if [ "${user}" = "hstct" ]; then
   echo -e "\n### Cloning dotfiles"
-  arch-chroot /mnt sudo -u $user bash -c 'git clone --recursive https://git.brkwsk.de/brkwskx/dotfiles.git ~/.dotfiles'
+  arch-chroot /mnt sudo -u $user bash -c 'git clone --recursive https://github.com/hstct/dotfiles.git'
 
   echo -e "\n### Running initial setup"
   arch-chroot /mnt /home/$user/.dotfiles/setup-system.sh
