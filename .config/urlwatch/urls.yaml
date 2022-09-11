@@ -211,14 +211,6 @@ filter:
   - strip
 max_tries: 30
 ---
-name: "mako"
-url: "https://github.com/emersion/mako/releases"
-filter:
-  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
-  - html2text: re
-  - strip
-max_tries: 30
----
 name: "mpv"
 url: "https://github.com/mpv-player/releases"
 filter:

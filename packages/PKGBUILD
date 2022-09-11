@@ -184,7 +184,6 @@ depends=(
   'xorg-server-xwayland'
   'wl-clipboard'
   'python-i3ipc'
-  'mako'
   'gtk-theme-arc-gruvbox-git'
   'wlsunset'
   'waybar'
