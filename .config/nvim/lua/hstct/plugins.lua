@@ -29,16 +29,12 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 return require("packer").startup({
   -- EVALUATE:
-  -- "max397574/better-escape.nvim"
-  -- "ray-x/lsp_signature.nvim"
   -- "andymass/vim-matchup"
-  -- "kevinhwang91/nvim-bqf"
   -- "axieax/urlview.nvim"
   -- "simrat39/rust-tools.nvim"
   -- "lervag/vimtex"
   -- "ray-x/go.nvim"
   -- "sindrets/diffview.nvim"
-  -- "stevearc/dressing.nvim"
   -- "jose-elias-alvarez/nvim-lsp-ts-utils"
   -- "echasnovski/mini.nvim"
   -- "bennypowers/nvim-regexplainer"
@@ -277,6 +273,20 @@ return require("packer").startup({
       "mickael-menu/zk-nvim",
       config = function()
         require("hstct.plugins.zk")
+      end,
+    })
+
+    use({
+      "axieax/urlview.nvim",
+      config = function()
+        require("hstct.plugins.urlview")
+      end,
+    })
+
+    use({
+      "stevearc/dressing.nvim",
+      config = function()
+        require("hstct.plugins.dressing")
       end,
     })
   end,

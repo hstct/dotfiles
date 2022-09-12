@@ -69,3 +69,7 @@ map("n", "<S-x>", "<CMD>bdelete!<CR>")
 
 -- neogit
 map("n", "<leader>gg", "<CMD>Neogit kind=split<CR>")
+
+-- urlview
+map("n", "<leader>ur", "<CMD>UrlView<CR>")
+map("n", "<leader>uj", "<CMD>UrlView jira<CR>")
