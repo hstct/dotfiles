@@ -28,16 +28,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 return require("packer").startup({
-  -- EVALUATE:
-  -- "andymass/vim-matchup"
-  -- "axieax/urlview.nvim"
-  -- "simrat39/rust-tools.nvim"
-  -- "lervag/vimtex"
-  -- "ray-x/go.nvim"
-  -- "sindrets/diffview.nvim"
-  -- "jose-elias-alvarez/nvim-lsp-ts-utils"
-  -- "echasnovski/mini.nvim"
-  -- "bennypowers/nvim-regexplainer"
   function(use)
     -- Package manager --
     use({ "wbthomason/packer.nvim" })
@@ -126,6 +116,13 @@ return require("packer").startup({
       cmd = "Neogit",
       config = function()
         require("hstct.plugins.neogit")
+      end,
+    })
+
+    use({
+      "sindrets/diffview.nvim",
+      config = function()
+        require("hstct.plugins.diffview")
       end,
     })
 

@@ -73,3 +73,7 @@ map("n", "<leader>gg", "<CMD>Neogit kind=split<CR>")
 -- urlview
 map("n", "<leader>ur", "<CMD>UrlView<CR>")
 map("n", "<leader>uj", "<CMD>UrlView jira<CR>")
+
+-- diffview
+map("n", "<leader>gd", "<CMD>DiffviewToggle<CR>")
+map("n", "<leader>gf", "<CMD>DiffviewFileHistory<CR>")

@@ -6,6 +6,7 @@ end
 require("hstct.settings")
 require("hstct.autocmd")
 require("hstct.plugins")
+require("hstct.commands")
 require("hstct.keybinds")
 
 --Pretty print lua table
