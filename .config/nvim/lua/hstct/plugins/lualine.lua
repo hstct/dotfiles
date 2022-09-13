@@ -1,6 +1,6 @@
 require("lualine").setup({
   options = {
-    theme = "kanagawa",
+    theme = "gruvbox-material",
     component_separators = "",
     section_separators = "",
     icons_enabled = true,

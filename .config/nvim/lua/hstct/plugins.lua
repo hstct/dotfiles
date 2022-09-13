@@ -46,7 +46,7 @@ return require("packer").startup({
     })
 
     use({
-      "rebelot/kanagawa.nvim",
+      "sainnhe/gruvbox-material",
       config = function()
         require("hstct.plugins.theme")
       end,

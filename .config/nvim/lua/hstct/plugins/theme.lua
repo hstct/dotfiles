@@ -1,27 +1,8 @@
 vim.opt.laststatus = 3
-require("kanagawa").setup({
-  undercurl = true,
-  commentStyle = {
-    italic = true,
-  },
-  -- functionStyle = "NONE",
-  keywordStyle = {
-    italic = true,
-  },
-  statementStyle = {
-    bold = true,
-  },
-  -- typeStyle = "NONE",
-  variablebuiltinStyle = {
-    italic = true,
-  },
-  specialReturn = true,
-  specialException = true,
-  transparent = false,
-  dimInactive = true,
-  globalStatus = true,
-  colors = {},
-  overrides = {},
-})
 
-vim.cmd("colorscheme kanagawa")
+vim.g.gruvbox_material_background = "hard"
+vim.g.gruvbox_material_foreground = "original"
+vim.g.gruvbox_material_better_performance = 1
+vim.g.gruvbox_material_ui_contrast = "high"
+
+vim.cmd("colorscheme gruvbox-material")
