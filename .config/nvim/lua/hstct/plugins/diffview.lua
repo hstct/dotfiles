@@ -2,7 +2,7 @@ local actions = require("diffview.actions")
 
 require("diffview").setup({
   diff_binaries = false,
-  enhanced_diff_hl = false,
+  enhanced_diff_hl = true,
   git_cmd = { "git" },
   use_icons = true,
   icons = {
