@@ -1,5 +1,4 @@
 local actions = require("telescope.actions")
-local A = vim.api
 local finders = require("telescope.builtin")
 
 require("telescope").setup({
