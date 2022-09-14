@@ -55,7 +55,7 @@ return require("packer").startup({
     use({
       {
         "nvim-lualine/lualine.nvim",
-        after = "kanagawa.nvim",
+        after = "gruvbox-material",
         event = "BufEnter",
         config = function()
           require("hstct.plugins.lualine")
