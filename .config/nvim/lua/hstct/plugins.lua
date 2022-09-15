@@ -126,6 +126,13 @@ return require("packer").startup({
       end,
     })
 
+    use({
+      "ruifm/gitlinker.nvim",
+      config = function()
+        require("hstct.plugins.gitlinker")
+      end,
+    })
+
     -- navigation and fuzzy search --
     use({
       "kyazdani42/nvim-tree.lua",
