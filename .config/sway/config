@@ -155,7 +155,6 @@ bindsym --to-code {
   $mod+Return exec cglaunch --term
 
   # Launcher
-  #$mod+d fullscreen disable, exec cglaunch wldash
   $mod+d fullscreen disable, exec cglaunch wofi
   $mod+p fullscreen disable, exec "wl-clipboard-manager lock; passmenu -p pass; wl-clipboard-manager unlock"
   $mod+b fullscreen disable, exec "pgrep -x dmenu && pkill dmenu || cglaunch buku-dmenu"

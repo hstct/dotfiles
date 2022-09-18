@@ -32,14 +32,6 @@ filter:
   - strip
 max_tries: 30
 ---
-name: "black-hole"
-url: "https://github.com/Sangwan5688/BlackHole/releases"
-filter:
-  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
-  - html2text: re
-  - strip
-max_tries: 30
----
 name: "bromite"
 url: "https://raw.githubusercontent.com/bromite/bromite/master/CHANGELOG.md"
 max_tries: 30
@@ -193,14 +185,6 @@ max_tries: 30
 ---
 name: "kitty changelog"
 url: "https://raw.githubusercontent.com/kovidgoyal/kitty/master/docs/changelog.rst"
-max_tries: 30
----
-name: "lazygit"
-url: "https://github.com/jesseduffield/lazygit/releases"
-filter:
-  - xpath: '(//div[contains(@class,"d-flex flew-column flex-md-row my-5 flex-justify-center")]//h1//a)[1]'
-  - html2text: re
-  - strip
 max_tries: 30
 ---
 name: "light"

@@ -194,7 +194,6 @@ depends=(
   'wtype'
   'wlrctl'
   'wofi'
-  'wldash'
   'swayr'
   # 'nvidia'
 
@@ -225,7 +224,6 @@ depends=(
   'git'
   'git-delta'
   'meld'
-  'lazygit'
 
   # dev tools
   'neovim'

@@ -221,7 +221,7 @@ pacstrap -i /mnt dell-command-configure fwupd tlp throttled dmidecode upower acp
 pacstrap -i /mnt pulseaudio pulseaudio-alsa pulseaudio-bluetooth pamixer pavucontrol playerctl bluez bluez-utils
 
 # ui
-pacstrap -i /mnt sway swaylock xorg-server-xwayland wl-clipboard python-i3ipc gtk-theme-arc-gruvbox-git wlsunset waybar light slurp wluma vulkan-intel vulkan-headers flashfocus-git qt5-wayland wtype wlrctl wldash swayr wofi
+pacstrap -i /mnt sway swaylock xorg-server-xwayland wl-clipboard python-i3ipc gtk-theme-arc-gruvbox-git wlsunset waybar light slurp wluma vulkan-intel vulkan-headers flashfocus-git qt5-wayland wtype wlrctl swayr wofi
 
 # fonts
 pacstrap -i /mnt ttf-dejavu ttf-courier-prime ttf-heuristica ttf-liberation ttf-jetbrains-mono noto-fonts cantarell-fonts ttf-droid ttf-lato ttf-opensans ttf-signika xorg-fonts-misc otf-font-awesome ttf-joypixels
