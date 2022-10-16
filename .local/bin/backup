@@ -18,10 +18,10 @@ if [ -d "$BACKUP_DIR" ]; then
   fi
 fi
 
-cd "$HOME"
+cd "$HOME" || exit
 echo -e "\nBackup STARTED\n\nSource(s):   $SOURCE\nDestination: $BACKUP_DIR\n"
 mkdir -p "$BACKUP_DIR"
-cp -a $SOURCE "$BACKUP_DIR"
+cp -a "$SOURCE" "$BACKUP_DIR"
 exitcode=$?
 
 if [ "$exitcode" -eq "0" ]; then

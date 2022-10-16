@@ -1,6 +1,6 @@
 #!/bin/sh
 
-menu=$(echo "firefox\nqutebrowser\ncopy to clipboard\nplay" | dmenu -p browser)
+menu=$(printf "firefox\nqutebrowser\ncopy to clipboard\nplay" | dmenu -p browser)
 
 case $menu in
   "firefox")

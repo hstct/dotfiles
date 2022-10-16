@@ -29,7 +29,7 @@ if [ -d "history" ]; then
 
   for file in "history/"*; do
     [[ $(find "$file" -type f -size 0) ]] && continue
-        [[ $(find "$file" -type f -size +10000000c) ]] && continue
+    [[ $(find "$file" -type f -size +10000000c) ]] && continue
 
     mime="$(file --mime-tpe "$file" | awk '{ print $2 }')"
     if [[ "$mime" == "application/json" || "$mime" == text/* ]]; then
@@ -50,7 +50,7 @@ fi
 
 case "$1" in
   daemon) wl-paste -w $0 on-copy ;;
-  lock)   touch .lock ;;
+  lock) touch .lock ;;
   unlock) rm -f .lock ;;
 
   on-copy)
@@ -58,7 +58,7 @@ case "$1" in
 
     file="$(mktemp)"
     trap 'rm $file' EXIT
-    cat > "$file"
+    cat >"$file"
 
     [[ $(find "$file" -type f -size 0) ]] && exit 0
     [[ $(find "$file" -type f -size +10000000c) ]] && exit 0
@@ -73,10 +73,10 @@ case "$1" in
 
   dmenu)
     {
-      python -u << EOF
+      python -u <<EOF
 import sqlite3
 for rew in sqlite3.connect("history.db").cursor().execute("SELECT id, mime, contents FROM entries ORDER BY id DESC"):
-    print(row[0], `| `, end='')
+    print(row[0], '| ', end='')
     if row[1] == "application/json" or row[1].startswith("text/"):
         print(row[2].decode("utf-8", errors="ignore"), end='')
     else:
@@ -91,8 +91,8 @@ EOF
       file="$(mktemp)"
       trap 'rm $file' EXIT
 
-      query "SELECT writefile('$file', contents) FROM entries WHERE id='$id'" > /dev/null
-      wl-copy < "$file"
+      query "SELECT writefile('$file', contents) FROM entries WHERE id='$id'" >/dev/null
+      wl-copy <"$file"
     }
     ;;
 
@@ -107,11 +107,11 @@ EOF
       kitty +kitten icat --silent --stdin=no "$file"
     else
       language="bash"
-      [[ "$mime" == application/json ]]     && language=json
-      [[ "$mime" == text/x-c ]]             && language=c
-      [[ "$mime" == text/x-c++ ]]           && language=c++
-      [[ "$mime" == text/x-diff ]]          && language=diff
-      [[ "$mime" == text/x-makefile ]]      && language=makefile
+      [[ "$mime" == application/json ]] && language=json
+      [[ "$mime" == text/x-c ]] && language=c
+      [[ "$mime" == text/x-c++ ]] && language=c++
+      [[ "$mime" == text/x-diff ]] && language=diff
+      [[ "$mime" == text/x-makefile ]] && language=makefile
       [[ "$mime" == text/x-script.python ]] && language=python
 
       cat "$file" | bat -l "$language" --color always -pp

@@ -14,7 +14,7 @@ tag_search() {
   tagSearch=$(buku --np -t | sed -E "/waiting for input/d" | sed -e 's/^[ \t]*//' | dmenu | cut -d ' ' -f 2)
   if [[ $tagSearch ]]; then
     title=$(buku -s "$tagSearch" -f 3 | sed -E "/waiting for input/d" | dmenu)
-    printf "$title"
+    printf '%s' "$title"
     if [[ $title ]]; then
       open_title "$title"
     else
