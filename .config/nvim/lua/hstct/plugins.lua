@@ -187,6 +187,13 @@ return require("packer").startup({
       end,
     })
 
+    use({
+      "ThePrimeagen/harpoon",
+      config = function()
+        require("hstct.plugins.harpoon")
+      end,
+    })
+
     -- editing --
     use({
       "numToStr/Comment.nvim",
@@ -300,6 +307,7 @@ return require("packer").startup({
         require("hstct.plugins.dressing")
       end,
     })
+    use({ "mboughaba/i3config.vim" })
   end,
   config = {
     display = {
