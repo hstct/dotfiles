@@ -371,7 +371,7 @@ depends=(
   'tealdeer'
   'rocketchat-client-bin'
   'webcord'
-  'fluffychat-bin'
+  'element-desktop'
   'weechat'
   'python-urwid_readline'
   'urlwatch'
