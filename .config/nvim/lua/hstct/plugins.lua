@@ -142,7 +142,7 @@ return require("packer").startup({
 
     -- navigation and fuzzy search --
     use({
-      "kyazdani42/nvim-tree.lua",
+      "nvim-tree/nvim-tree.lua",
       event = "CursorHold",
       config = function()
         require("hstct.plugins.nvim_tree")
