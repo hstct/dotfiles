@@ -17,8 +17,8 @@ map("n", "N", "Nzz")
 map("n", "<ESC>", "<CMD>noh<CR>")
 
 -- Mimic shell movements
-map("i", "<C-E>", "<ESC>A")
-map("i", "<C-A>", "<ESC>I")
+map("i", "<C-E>", "<C-o>$")
+map("i", "<C-A>", "<C-o>^")
 
 -- Quickly save the current buffer or all buffers
 map("n", "<leader>w", "<CMD>update<CR>")
