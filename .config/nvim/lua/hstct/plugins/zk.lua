@@ -14,6 +14,7 @@ require("zk").setup({
   picker = "telescope",
 })
 
+vim.keymap.set("n", "<leader>ze", "<cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>")
 vim.keymap.set("n", "<leader>zn", "<cmd>ZkNew { dir = vim.fn.input('Dir: '), title = vim.fn.input('Title: ') }<CR>")
 vim.keymap.set("n", "<leader>zmd", "<cmd>ZkNew { dir = vim.env.ZK_NOTEBOOK_DIR .. '/meetings/daily' }<CR>")
 vim.keymap.set("n", "<leader>zmr", "<cmd>ZkNew { dir = vim.env.ZK_NOTEBOOK_DIR .. '/meetings/devrhino' }<CR>")
