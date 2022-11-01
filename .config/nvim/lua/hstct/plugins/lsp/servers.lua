@@ -8,7 +8,7 @@ local flags = {
 }
 
 ---Common capabilities including lsp snippets and autocompletion
-local capabilities = U.capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 ---Common `on_attach` function for LSP servers
 ---@param client table
@@ -98,10 +98,12 @@ local servers = {
   -- 'terraformls', -- Terraform
 }
 
+local conf = {
+  flags = flags,
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
 for _, server in ipairs(servers) do
-  lsp[server].setup({
-    flags = flags,
-    capabilities = capabilities,
-    on_attach = on_attach,
-  })
+  lsp[server].setup(conf)
 end
