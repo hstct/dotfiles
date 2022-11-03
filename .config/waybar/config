@@ -39,6 +39,10 @@
         "interval": 1
     },
     "custom/usbguard": {
+        "format-icons": {
+            "icon": "<span foreground='#928374'> </span>"
+        },
+        "format": "{icon}{}",
         "exec": "waybar-usbguard",
         "return-type": "json",
         "on-click": "waybar-usbguard allow",
@@ -54,6 +58,10 @@
         "interval": 10
     },
     "custom/updates": {
+        "format-icons": {
+            "icon": "<span foreground='#928374'> </span>"
+        },
+        "format": "{icon}{}",
         "exec": "waybar-updates show",
         "return-type": "json",
         "signal": 1,
@@ -61,6 +69,10 @@
         "interval": "once"
     },
     "custom/mail": {
+        "format-icons": {
+            "icon": "<span foreground='#928374'> </span>"
+        },
+        "format": "{icon}{}",
         "exec": "waybar-mail",
         "return-type": "json"
     },

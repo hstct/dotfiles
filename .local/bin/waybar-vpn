@@ -4,10 +4,10 @@ trap 'pkill -P $$' EXIT
 
 vpn() {
   if ($(nmcli --terse -f name conn show --active | grep -q atix)); then
-    icon="<span foreground='#928374'></span>"
+    icon=""
     class=on
   else
-    icon=''
+    icon=''
     class=off
   fi
   tooltip="Connected to atix"
