@@ -36,6 +36,7 @@ alias ll='ls -l'
 alias utc='env TZ=UTC date'
 alias gpg-change-card='gpg-connect-agent "scd serialno" "learn --force" /bye'
 alias yd='yt-dlp --external-downloader aria2c --sponsorblock-mark all'
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 
 cdr() {
     cd "$(git rev-parse --show-toplevel)" || return
