@@ -151,7 +151,6 @@ mode $mode_workspaces_monitors {
 
 bindsym --to-code {
   # Terminal
-  #$mod+Return exec kitty
   $mod+Return exec cglaunch --term
 
   # Launcher
@@ -164,6 +163,7 @@ bindsym --to-code {
   Print exec cglaunch sway-screenshot-area
   $mod+Print exec cglaunch sway-gif-area
   $mod+Shift+Print exec sway-screenshare
+  $mod+equal exec bash -c "pkill -x qalculate-gtk || cglaunch qalculate-gtk"
 
   # Kill focused window
   $mod+Shift+q kill
