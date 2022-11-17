@@ -77,3 +77,10 @@ map("n", "<leader>uj", "<CMD>UrlView jira<CR>")
 -- diffview
 map("n", "<leader>gd", "<CMD>DiffviewToggle<CR>")
 map("n", "<leader>gf", "<CMD>DiffviewFileHistory<CR>")
+
+-- gitlinker
+map(
+  "v",
+  "<leader>gb",
+  "<CMD>lua require('gitlinker').get_buf_range_url('v', { action_callback = require('gitlinker').open_in_browser })<CR>"
+)
