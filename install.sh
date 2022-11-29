@@ -174,7 +174,7 @@ if ! grep "${user}" /etc/pacman.conf >/dev/null; then
 Server = file:///mnt/var/cache/pacman/${user}-local
 
 [maximbaz]
-Server = https://pkgbuild.com/~maximbaz/repo
+Server = https://pkgbuild.com/~maximbaz/repo/x86_64
 
 [options]
 CacheDir = /mnt/var/cache/pacman/pkg
@@ -215,7 +215,7 @@ pacstrap -i /mnt arch-audit overdue ccid pam-u2f yubikey-touch-detector usbguard
 pacstrap -i /mnt earlyoom systembus-notify
 
 # hardware
-pacstrap -i /mnt dell-command-configure fwupd tlp throttled dmidecode upower acpi iriunwebcam-bin bolt
+pacstrap -i /mnt fwupd tlp throttled dmidecode upower acpi iriunwebcam-bin bolt
 
 # audio
 pacstrap -i /mnt pulseaudio pulseaudio-alsa pulseaudio-bluetooth pamixer pavucontrol playerctl bluez bluez-utils
