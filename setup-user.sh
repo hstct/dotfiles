@@ -181,9 +181,9 @@ file --compile --magic-file "$HOME/.magic"
 
 if ! gpg -k | grep "$MY_PGP_KEY_ID" >/dev/null; then
   echo "Importing my public PGP key"
-  curl -s https://hostc.at/pgp_keys.asc | gpg --import
+  curl -s https://elmcat.uber.space/pub.asc | gpg --import
   echo "5\ny\n" | gpg --command-fd 0 --no-tty --batch --edit-key "$MY_PGP_KEY_ID" trust
-  curl -s https://hostc.at/pgp_keys.asc | pacman-key -a -
+  curl -s https://elmcat.über.space/pub.asc | pacman-key -a -
   pacman-key --lsign "$MY_PGP_KEY_ID"
 fi
 
