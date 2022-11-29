@@ -218,7 +218,7 @@ pacstrap -i /mnt earlyoom systembus-notify
 pacstrap -i /mnt fwupd tlp throttled dmidecode upower acpi iriunwebcam-bin bolt
 
 # audio
-pacstrap -i /mnt pulseaudio pulseaudio-alsa pulseaudio-bluetooth pamixer pavucontrol playerctl bluez bluez-utils
+pacstrap -i /mnt pipewire-pulse pulseaudio-alsa pulseaudio-bluetooth pamixer pavucontrol playerctl bluez bluez-utils
 
 # ui
 pacstrap -i /mnt sway swaylock xorg-server-xwayland wl-clipboard python-i3ipc gtk-theme-arc-gruvbox-git wlsunset waybar light slurp wluma vulkan-intel vulkan-headers flashfocus-git qt5-wayland wtype wlrctl swayr wofi
@@ -278,7 +278,8 @@ pacstrap -i /mnt qutebrowser python-adblock chromium-widevine pdfjs python-tldex
 pacstrap -i /mnt grim swappy wf-recorder v4l2loopback-dkms
 
 # media
-pacstrap -i /mnt xdg-desktop-portal-wlr gst-plugin-pipewire pipewire pipewire-alsa pipewire-jack pipewire-media-session pipewire-pulse
+#pacstrap -i /mnt xdg-desktop-portal-wlr gst-plugin-pipewire pipewire pipewire-alsa pipewire-jack pipewire-media-session pipewire-pulse
+pacstrap -i /mnt xdg-desktop-portal-wlr wireplumber
 
 # video
 pacstrap -i /mnt mpv mpv-mpris ffmpeg yt-dlp aria2
@@ -290,7 +291,7 @@ pacstrap -i /mnt kubectl kubectx
 pacstrap -i /mnt libvirt virt-manager qemu dnsmasq ebtables edk2-ovmf
 
 # misc
-pacstrap -i /mnt gimp krita hugo qalculate-gtk libreoffice-fresh scli python-urwid_readline urlwatch
+pacstrap -i /mnt gimp krita hugo qalculate-gtk libreoffice-fresh scli python-urwid_readline urlwatch mkcert
 
 echo -e "\n### Generating base config files"
 ln -sfT dash /mnt/usr/bin/sh
