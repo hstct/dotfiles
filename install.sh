@@ -233,7 +233,7 @@ pacstrap -i /mnt aurpublish aurutils repoctl rebuild-detector
 pacstrap -i /mnt git git-delta meld tig
 
 # dev tools
-pacstrap -i /mnt neovim prettier dos2unix editorconfig-core-c docker docker-compose direnv terraform terraform-ls teehee strace fzf visidata
+pacstrap -i /mnt neovim prettier dos2unix editorconfig-core-c docker docker-compose direnv teehee strace fzf visidata
 
 # shell dev
 pacstrap -i /mnt bash-language-server checkbashisms shellcheck shfmt bash-completion
