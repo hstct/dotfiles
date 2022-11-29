@@ -206,7 +206,7 @@ pacstrap -i /mnt progress gocryptfs ntfs-3g sshfs udiskie udiskie-dmenu-git xplr
 pacstrap -i /mnt lbzip2 pigz pixz p7zip unrar unzip zip
 
 # network
-pacstrap -i /mnt iwd nftables iptables-nft bandwhich net-tools nmap openbsd-netcat dog mtr sipcalc wget rsync openssh curlie speedtest-cli wireguard-tools systemd-resolvconf vnstat proxychains-ng
+pacstrap -i /mnt iwd nftables iptables-nft bandwhich net-tools nmap openbsd-netcat dog mtr sipcalc wget rsync openssh curlie speedtest-cli wireguard-tools systemd-resolvconf vnstat proxychains-ng networkmanager networks managers applet networkmanager-openvpn
 
 # security
 pacstrap -i /mnt arch-audit overdue ccid pam-u2f yubikey-touch-detector usbguard pinentry gcr checksec polkit-gnome
