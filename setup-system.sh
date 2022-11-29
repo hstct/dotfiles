@@ -171,5 +171,5 @@ timedatectl set-ntp true
 
 echo "Configuring aurutils"
 mkdir -p /etc/aurutils
-ln -sF /etc/pacman.conf "etc/aurutils/pacman-hstct-local.conf"
-ln -sF /etc/pacman.conf "etc/aurutils/pacman-$(uname -m).conf"
+ln -sF /etc/pacman.conf "/etc/aurutils/pacman-hstct-local.conf"
+ln -sF /etc/pacman.conf "/etc/aurutils/pacman-$(uname -m).conf"
