@@ -145,6 +145,13 @@ if [[ $HOSTNAME == home ]]; then
   systemctl_enable_start "backup-repo@pkgbuild.timer"
 fi
 
+echo ""
+echo "===================="
+echo "Reload udev rules..."
+echo "===================="
+udevadm control --reload
+udevadm trigger
+
 # echo ""
 # echo "==============================="
 # echo "Creating top level Trash dir..."
