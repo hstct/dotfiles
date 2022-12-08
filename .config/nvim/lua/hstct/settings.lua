@@ -8,6 +8,8 @@ o.updatetime = 200
 
 o.jumpoptions = "view"
 
+vim.opt.diffopt:append("linematch:60")
+
 o.scrolloff = 8
 
 o.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
