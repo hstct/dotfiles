@@ -1,48 +1,47 @@
 " =============================================================================
 " ===> BLOGS <=================================================================
 " =============================================================================
-https://lobste.rs/rss
 " ------> Programming and Security <-------------------------------------------
 https://drewdevault.com/blog/index.xml
-https://www.unixsheikh.com/feed.rss
 https://xeiaso.net/blog.rss
 https://www.kuketz-blog.de/feed
-https://www.heise.de/security/rss/news-atom.xml
-https://www.heise.de/rss/heise-Rubrik-IT-atom.xml
-https://rss.golem.de/rss.php?ms=security&feed=ATOM1.0
-" "
-" ------> Linux and Open Source <----------------------------------------------
-https://opensource.com/feed
 https://archlinux.org/feeds/news/
-https://www.linux.com/feed
-https://fedoramagazine.org/feed/
-https://www.suse.com/c/blog/feed
-https://www.cyberciti.biz/feed
-https://www.tecmint.com/feed/
-https://itsfoss.com/feed
-https://www.fosslinux.com/feed
-https://www.phoronix.com/rss.php
-https://www.gamingonlinux.com/article_rss.php
-https://rss.golem.de/rss.php?ms=open-source&feed=ATOM1.0
 " "
-" ------> Software Development <-----------------------------------------------
-https://github.blog/feed
-https://martinfowler.com/feed.atom
-https://alistapart.com/main/feed
-http://feeds.dzone.com/home
-https://www.heise.de/developer/rss/news-atom.xml
-https://rss.golem.de/rss.php?ms=softwareentwicklung&feed=ATOM1.0
-https://blog.pragmaticengineer.com/rss/
-" "
-" ------> Pulp <---------------------------------------------------------------
-https://discourse.pulpproject.org/c/blog.rss
+" ------> RPG <----------------------------------------------------------------
+https://questingbeast.substack.com/feed
 " "
 " =============================================================================
 " ===> YOUTUBE CHANNELS <======================================================
 " =============================================================================
-" ------> OSS <----------------------------------------------------------------
-https://www.youtube.com/feeds/videos.xml?channel_id=UCI43Ffs4VPDv7awXvvBJfRQ
-" "
-" ------> Personalities <------------------------------------------------------
+" ------> Vim stuff <----------------------------------------------------------
 https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw
 https://www.youtube.com/feeds/videos.xml?channel_id=UCd3dNckv1Za2coSaHGHl5aA
+" "
+" ------> RPG <----------------------------------------------------------------
+https://www.youtube.com/feeds/videos.xml?channel_id=UCvYwePdbWSEwUa-Pk02u3Zw
+https://www.youtube.com/feeds/videos.xml?channel_id=UCkVdb9Yr8fc05_VbAVfskCA
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0-gfEp3GDT0wT7bdU-CeSw
+https://www.youtube.com/feeds/videos.xml?channel_id=UCe884czqhBIZIPXcE_ZA1Hw
+https://www.youtube.com/feeds/videos.xml?channel_id=UCbIl96w4kNeK_5HZrQWS9oA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCxqOett_LMkoAlWMscgUSJQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UCKW6yMwL_aEu83g6DdjVfxw
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5l5MjE1H1NP7Gh6VOZNfsQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UCQs8-UJ7IHsrzhQ-OQOYBmg
+https://www.youtube.com/feeds/videos.xml?channel_id=UCD6ERRdXrF2IZ0R888G8PQg
+https://www.youtube.com/feeds/videos.xml?channel_id=UCO1HvISVLDqwUOzmviTRECw
+" "
+" ------> Nerd Stuff <---------------------------------------------------------
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7yRILFFJ2QZCykymr8LPwA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCgMJGv4cQl8-q71AyFeFmtg
+" "
+" ------> Cooking <------------------------------------------------------------
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5qRAYQmCLx8hFGIiTWSQvA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCIEv3lZ_tNXHzL3ox-_uUGQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5PH7ZmLciZZS5vX5HPusUw
+https://www.youtube.com/feeds/videos.xml?channel_id=UCzH5n3Ih5kgQoiDAQt2FwLw
+" "
+" ------> Trailers <-----------------------------------------------------------
+https://www.youtube.com/feeds/videos.xml?channel_id=UCzcRQ3vRNr6fJ1A9rqFn7QA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCTxYD92kxevI1I1-oITiQzg
+" "
+https://twitchrss.appspot.com/vod/Matthew_Colville
