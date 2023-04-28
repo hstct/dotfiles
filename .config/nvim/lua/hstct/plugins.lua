@@ -308,6 +308,13 @@ return require("packer").startup({
       end,
     })
     use({ "mboughaba/i3config.vim" })
+
+    use({
+      "epwalsh/obsidian.nvim",
+      config = function()
+        require("hstct.plugins.obsidian")
+      end,
+    })
   end,
   config = {
     display = {
