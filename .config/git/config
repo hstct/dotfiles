@@ -13,6 +13,9 @@
 [includeIf "gitdir:~/dev/misc/"]
   path = ~/.config/git/work
 
+[includeIf "gitdir:~/dev/talks/"]
+  path = ~/.config/git/work
+
 [includeIf "gitdir:~/dev/personal/"]
   path = ~/.config/git/home
 
@@ -30,5 +33,12 @@
 
 [sendemail]
   annotate = yes
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
 
 # vim:ft=ini
