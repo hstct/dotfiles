@@ -13,7 +13,7 @@ windows:
   - window_name: pulp_deb
     start_directory: pulp_deb
     shell_command_before:
-      - source venv/bin/activate
+      - source ~/.local/state/python/venvs/pulp_deb/bin/activate
     panes:
       - shell_command:
         - clear
@@ -21,7 +21,7 @@ windows:
   - window_name: pulpcore
     start_directory: pulpcore
     shell_command_before:
-      - source venv/bin/activate
+      - source ~/.local/state/python/venvs/pulpcore/bin/activate
     panes:
       - shell_command:
         - clear
@@ -29,7 +29,23 @@ windows:
   - window_name: pulp_rpm
     start_directory: pulp_rpm
     shell_command_before:
-      - source venv/bin/activate
+      - source ~/.local/state/python/venvs/pulp_rpm/bin/activate
+    panes:
+      - shell_command:
+        - clear
+        - ls
+  - window_name: pulp-cli
+    start_directory: pulp-cli
+    shell_command_before:
+      - source ~/.local/state/python/venvs/pulp-cli/bin/activate
+    panes:
+      - shell_command:
+        - clear
+        - ls
+  - window_name: pulp-cli-deb
+    start_directory: pulp-cli-deb
+    shell_command_before:
+      - source ~/.local/state/python/venvs/pulp-cli-deb/bin/activate
     panes:
       - shell_command:
         - clear
