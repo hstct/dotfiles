@@ -160,6 +160,7 @@ bindsym --to-code {
   $mod+t fullscreen disable, exec "pgrep -x dmenu && pkill dmenu || cglaunch buku-dmenu -t"
   $mod+n fullscreen disable, exec "pgrep -x dmenu && pkill dmenu || cglaunch networkmanager_dmenu"
   $mod+m fullscreen disable, exec udiskie-dmenu
+  $mod+Shift+p exec cglaunch sway-screenshot-area
   Print exec cglaunch sway-screenshot-area
   $mod+Print exec cglaunch sway-record-area
   $mod+Shift+Print exec sway-screenshare
