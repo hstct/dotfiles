@@ -115,6 +115,8 @@ alias odb='oci db reset'
 alias oti='oci test -i -p'
 alias ot='oci test -p'
 alias ogc='oci generate-client -i'
+alias op='oci pulp'
+alias ops='op show --href'
 
 ## systemctl
 
