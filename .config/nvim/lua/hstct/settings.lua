@@ -8,7 +8,8 @@ o.updatetime = 200
 
 o.jumpoptions = "view"
 
-vim.opt.diffopt:append("linematch:60")
+-- Stable buffer content on window open/close events.
+o.splitkeep = "screen"
 
 o.scrolloff = 8
 
