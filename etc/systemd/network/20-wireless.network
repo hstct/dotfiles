@@ -4,6 +4,8 @@ Name = wlan0
 [Network]
 DHCP = yes
 Domains = ~lan
+DNSSEC = no
 
 [DHCP]
 RouteMetric = 20
+UseDNS = no
