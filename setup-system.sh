@@ -92,17 +92,18 @@ copy "etc/systemd/system/system-dotfiles-sync.service"
 copy "etc/systemd/system/system-dotfiles-sync.timer"
 copy "etc/systemd/system.conf.d/kill-fast.conf"
 copy "etc/usbguard/usbguard-daemon.conf" 600
+copy "etc/systemd/network/20-wireless.network"
 
-if [[ $HOSTNAME == home ]]; then
-  copy "etc/systemd/network/20-wireless.network"
-  copy "etc/systemd/system/backup-repo@pkgbuild"
-  copy "etc/systemd/system/backup-repo@.service"
-  copy "etc/systemd/system/backup-repo@.timer"
-fi
+#if [[ $HOSTNAME == home ]]; then
+#  copy "etc/systemd/network/20-wireless.network"
+#  copy "etc/systemd/system/backup-repo@pkgbuild"
+#  copy "etc/systemd/system/backup-repo@.service"
+#  copy "etc/systemd/system/backup-repo@.timer"
+#fi
 
-if [[ $HOSTNAME == work ]]; then
-  copy "etc/systemd/network/20-wireless-work.network"
-fi
+#if [[ $HOSTNAME == work ]]; then
+#  copy "etc/systemd/network/20-wireless-work.network"
+#fi
 
 (("$reverse")) && exit 0
 
