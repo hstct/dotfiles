@@ -96,7 +96,6 @@
   autosquash = true
 
 [user]
-  name = Tobias Grigo
   useConfigOnly = true
 
 [remote "origin"]

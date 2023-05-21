@@ -10,6 +10,9 @@
 [includeIf "gitdir:~/dev/foreman/"]
   path = ~/.config/git/work
 
+[includeIf "gitdir:~/dev/katello/"]
+  path = ~/.config/git/work
+
 [includeIf "gitdir:~/dev/misc/"]
   path = ~/.config/git/work
 
