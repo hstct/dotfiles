@@ -118,6 +118,21 @@ alias ogc='oci generate-client -i'
 alias op='oci pulp'
 alias ops='op show --href'
 
+alias s3oci='oci-env -e pminio.env'
+alias s3ocb='s3oci compose build'
+alias s3ocu='s3oci compose up -d'
+alias s3ocd='s3oci compose down'
+alias s3ocd!='s3ocd --volumes'
+alias s3ocr='s3ocd; s3ocu'
+alias s3ocr!='s3ocd!; s3ocu'
+alias s3ocl='s3oci compose logs -f --tail=1000'
+alias s3odb='s3oci db reset'
+alias s3oti='s3oci test -i -p'
+alias s3ot='s3oci test -p'
+alias s3ogc='s3oci generate-client -i'
+alias s3op='oci pulp'
+alias s3ops='s3op show --href'
+
 ## systemctl
 
 alias sys='systemctl'
