@@ -163,6 +163,11 @@ mount -o noatime,nodiratime,compress=zstd,subvol=temp /dev/mapper/luks /mnt/var/
 mount -o noatime,nodiratime,compress=zstd,subvol=swap /dev/mapper/luks /mnt/swap
 mount -o noatime,nodiratime,compress=zstd,subvol=snapshots /dev/mapper/luks /mnt/.snapshots
 
+echo -e "\n### Importing my public PGP key"
+export MY_GPG_KEY_ID="0x6DB88737C11F5A48"
+curl -s https://levis.name/pgp_keys.asc | pacman-key -a -
+pacman-key --lsign-key "$MY_GPG_KEY_ID"
+
 echo -e "\n### Configuring custom repo"
 mkdir "/mnt/var/cache/pacman/${user}-local"
 
@@ -173,7 +178,7 @@ if ! grep "${user}" /etc/pacman.conf >/dev/null; then
 [${user}-local]
 Server = file:///mnt/var/cache/pacman/${user}-local
 
-[maximbaz]
+[cyrinux-aur]
 Server = https://aur.levis.ws/x86_64/
 
 [options]
@@ -215,16 +220,16 @@ pacstrap -i /mnt arch-audit overdue ccid pam-u2f yubikey-touch-detector usbguard
 pacstrap -i /mnt earlyoom systembus-notify
 
 # hardware
-pacstrap -i /mnt fwupd tlp throttled dmidecode upower acpi iriunwebcam-bin bolt
+pacstrap -i /mnt fwupd tlp throttled dmidecode upower acpi bolt
 
 # audio
 pacstrap -i /mnt pipewire-pulse pulseaudio-alsa pulseaudio-bluetooth pamixer pavucontrol playerctl bluez bluez-utils
 
 # ui
-pacstrap -i /mnt sway swaylock xorg-server-xwayland wl-clipboard python-i3ipc gtk-theme-arc-gruvbox-git wlsunset waybar light slurp wluma vulkan-intel vulkan-headers flashfocus-git qt5-wayland wtype wlrctl swayr wofi
+pacstrap -i /mnt sway swaylock xorg-server-xwayland wl-clipboard python-i3ipc gtk-theme-arc-gruvbox-git wlsunset waybar light slurp vulkan-intel vulkan-headers qt5-wayland wtype wlrctl swayr wofi
 
 # fonts
-pacstrap -i /mnt ttf-dejavu ttf-courier-prime ttf-heuristica ttf-liberation ttf-jetbrains-mono noto-fonts cantarell-fonts ttf-droid ttf-lato ttf-opensans ttf-signika xorg-fonts-misc otf-font-awesome ttf-joypixels
+pacstrap -i /mnt ttf-dejavu ttf-courier-prime ttf-liberation ttf-jetbrains-mono noto-fonts cantarell-fonts ttf-droid ttf-lato ttf-opensans ttf-signika xorg-fonts-misc otf-font-awesome ttf-joypixels nerd-fonts-noto-sans-mono
 
 # aur
 pacstrap -i /mnt aurpublish aurutils repoctl rebuild-detector
@@ -254,7 +259,7 @@ pacstrap -i /mnt rust rust-analyzer
 pacstrap -i /mnt meson
 
 # lua dev
-pacstrap -i /mnt stylua-bin
+# pacstrap -i /mnt stylua-bin
 
 # spell
 pacstrap -i /mnt aspell-en aspell-de
