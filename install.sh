@@ -174,7 +174,7 @@ if ! grep "${user}" /etc/pacman.conf >/dev/null; then
 Server = file:///mnt/var/cache/pacman/${user}-local
 
 [maximbaz]
-Server = https://pkgbuild.com/~maximbaz/repo/x86_64
+Server = https://aur.levis.ws/x86_64/
 
 [options]
 CacheDir = /mnt/var/cache/pacman/pkg
