@@ -66,7 +66,7 @@ echo "=========================="
 copy "etc/bluetooth/main.conf"
 copy "etc/conf.d/snapper"
 copy "etc/default/earlyoom"
-copy "etc/docker/daemon.json"
+# copy "etc/docker/daemon.json"
 copy "etc/fwupd/uefi_capsule.conf"
 copy "etc/modules-load.d/v4l2loopback.conf"
 copy "etc/modprobe.d/v4l2loopback.conf"
@@ -117,7 +117,7 @@ sysctl --system >/dev/null
 systemctl daemon-reload
 systemctl_enable_start "bluetooth.service"
 systemctl_enable_start "btrfs-scrub@-.timer"
-systemctl_enable_start "docker.socket"
+# systemctl_enable_start "docker.socket"
 systemctl_enable_start "earlyoom.service"
 systemctl_enable_start "fstrim.timer"
 systemctl_enable_start "iwd.service"
@@ -177,7 +177,7 @@ fi
 echo "Configuring NTP"
 timedatectl set-ntp true
 
-echo "Configuring aurutils"
-mkdir -p /etc/aurutils
-ln -sF /etc/pacman.conf "/etc/aurutils/pacman-hstct-local.conf"
-ln -sF /etc/pacman.conf "/etc/aurutils/pacman-$(uname -m).conf"
+# echo "Configuring aurutils"
+# mkdir -p /etc/aurutils
+# ln -sF /etc/pacman.conf "/etc/aurutils/pacman-hstct-local.conf"
+# ln -sF /etc/pacman.conf "/etc/aurutils/pacman-$(uname -m).conf"

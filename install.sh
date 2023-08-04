@@ -72,6 +72,7 @@ echo -e "\n### Setting up clock"
 timedatectl set-ntp true
 hwclock --systohc --utc
 
+pacman -Sy archlinux-keyring
 echo -e "\n### Installing additional tools"
 pacman -Sy --noconfirm --needed git reflector terminus-font dialog wget
 
@@ -163,140 +164,48 @@ mount -o noatime,nodiratime,compress=zstd,subvol=temp /dev/mapper/luks /mnt/var/
 mount -o noatime,nodiratime,compress=zstd,subvol=swap /dev/mapper/luks /mnt/swap
 mount -o noatime,nodiratime,compress=zstd,subvol=snapshots /dev/mapper/luks /mnt/.snapshots
 
-echo -e "\n### Importing my public PGP key"
-export MY_GPG_KEY_ID="0x6DB88737C11F5A48"
-curl -s https://levis.name/pgp_keys.asc | pacman-key -a -
-pacman-key --lsign-key "$MY_GPG_KEY_ID"
-
-echo -e "\n### Configuring custom repo"
-mkdir "/mnt/var/cache/pacman/${user}-local"
-
-repo-add "/mnt/var/cache/pacman/${user}-local/${user}-local.db.tar"
-
-if ! grep "${user}" /etc/pacman.conf >/dev/null; then
-  cat >>/etc/pacman.conf <<EOF
-[${user}-local]
-Server = file:///mnt/var/cache/pacman/${user}-local
-
-[cyrinux-aur]
-Server = https://aur.levis.ws/x86_64/
-
-[options]
-CacheDir = /mnt/var/cache/pacman/pkg
-CacheDir = /mnt/var/cache/pacman/${user}-local
-EOF
-fi
+# echo -e "\n### Importing my public PGP key"
+# export MY_GPG_KEY_ID="0x6DB88737C11F5A48"
+# curl -s https://levis.name/pgp_keys.asc | pacman-key -a -
+# pacman-key --lsign-key "$MY_GPG_KEY_ID"
+#
+# echo -e "\n### Configuring custom repo"
+# mkdir "/mnt/var/cache/pacman/${user}-local"
+#
+# repo-add "/mnt/var/cache/pacman/${user}-local/${user}-local.db.tar"
+#
+# if ! grep "${user}" /etc/pacman.conf >/dev/null; then
+#   cat >>/etc/pacman.conf <<EOF
+# [${user}-local]
+# Server = file:///mnt/var/cache/pacman/${user}-local
+#
+# [cyrinux-aur]
+# Server = https://aur.levis.ws/x86_64/
+#
+# [options]
+# CacheDir = /mnt/var/cache/pacman/pkg
+# CacheDir = /mnt/var/cache/pacman/${user}-local
+# EOF
+# fi
 
 echo -e "\n### Installing packages"
 
-pacman -Sy archlinux-keyring
-# base
-pacstrap -i /mnt base dash linux linux-firmware linux-headers kernel-modules-hook mkinitcpio-encrypt-detached-header logrotate man-pages btrfs-progs htop vi
+# base (mkinitcpio-encrypt-detached-header, arch-secure-boot, udiskie-dmenu-git, vimiv-qt, webwormhole-git, overdue, gtk-theme-arc-gruvbox-git wlsunset, wlrctl swayr, ttf-courier-prime, ttf-signika, nerd-fonts-noto-sans-mono, lscolors-git, mutt-ics, chromium-widevine, python-urwid_readline)
+pacstrap -i /mnt base dash linux linux-firmware linux-headers linux-lts sbsigntools efibootmgr binutils edk2-shell snapper snap-pac kernel-modules-hook logrotate man-pages btrfs-progs htop vi posix autoconf automake bison fakeroot flex gcc gettext groff gzip libtool make pacman pkgconf sudo texinfo which pacman-contrib devtools reflector pkgstats intel-ucode terminus-font archlinux-keyring progress gocryptfs ntfs-3g sshfs udiskie xplr ncdu croc bat exa fd ripgrep ripgrep-all tree trash-cli imagemagick jq dfrs zathura-pdf-mupdf pdftk inotify-tools xournalpp bfs lftp lbzip2 pigz pixz p7zip unrar unzip zip iwd nftables iptables-nft bandwhich net-tools nmap openbsd-netcat dog mtr sipcalc wget rsync openssh curlie speedtest-cli wireguard-tools systemd-resolvconf vnstat proxychains-ng networkmanager network-manager-applet networkmanager-openvpn arch-audit ccid pam-u2f yubikey-touch-detector usbguard pinentry gcr checksec polkit-gnome earlyoom systembus-notify fwupd tlp throttled dmidecode upower acpi bolt pamixer pavucontrol playerctl bluez bluez-utils sway swaylock xorg-server-xwayland wl-clipboard python-i3ipc waybar light slurp vulkan-intel vulkan-headers qt5-wayland wtype wofi ttf-dejavu ttf-liberation ttf-jetbrains-mono noto-fonts cantarell-fonts ttf-droid ttf-lato ttf-opensans xorg-fonts-misc otf-font-awesome ttf-joypixels git git-delta meld tig neovim prettier dos2unix editorconfig-core-c podman podman-compose direnv strace fzf visidata bash-language-server checkbashisms shellcheck shfmt bash-completion python-lsp-server python-black python-pip python-pylint yapf bpython go go-tools gopls revive staticcheck yarn rust rust-analyzer meson aspell-en aspell-de android-tools android-udev kitty zsh pass pwgen msitools browserpass-chromium browserpass-firefox gnome-keyring libgnome-keyring isync msmtp neomutt urlscan goimapnotify w3m qutebrowser python-adblock pdfjs python-tldextract intel-media-driver chromium firefox grim swappy wf-recorder v4l2loopback-dkms xdg-desktop-portal-wlr wireplumber mpv mpv-mpris ffmpeg yt-dlp aria2 libvirt virt-manager qemu dnsmasq ebtables edk2-ovmf gimp krita  qalculate-gtk libreoffice-fresh mkcert
 
-# base-devel
-pacstrap -i /mnt posix autoconf automake bison fakeroot flex gcc gettext groff gzip libtool make pacman pkgconf sudo texinfo which
-
-# other arch
-pacstrap -i /mnt pacman-contrib devtools reflector pkgstats
-
-# boot
-pacstrap -i /mnt arch-secure-boot intel-ucode terminus-font
-
-pacstrap -i /mnt archlinux-keyring
-
-# files
-pacstrap -i /mnt progress gocryptfs ntfs-3g sshfs udiskie udiskie-dmenu-git xplr vimiv-qt ncdu croc webwormhole-git bat exa fd ripgrep ripgrep-all tree trash-cli imagemagick jq dfrs zathura-pdf-mupdf pdftk inotify-tools xournalpp bfs lftp
-
-# archiving
-pacstrap -i /mnt lbzip2 pigz pixz p7zip unrar unzip zip
-
-# network
-pacstrap -i /mnt iwd nftables iptables-nft bandwhich net-tools nmap openbsd-netcat dog mtr sipcalc wget rsync openssh curlie speedtest-cli wireguard-tools systemd-resolvconf vnstat proxychains-ng networkmanager network-manager-applet networkmanager-openvpn
-
-# security
-pacstrap -i /mnt arch-audit overdue ccid pam-u2f yubikey-touch-detector usbguard pinentry gcr checksec polkit-gnome
-
-# oom prevention
-pacstrap -i /mnt earlyoom systembus-notify
-
-# hardware
-pacstrap -i /mnt fwupd tlp throttled dmidecode upower acpi bolt
-
-# audio
-pacstrap -i /mnt pipewire-pulse pulseaudio-alsa pulseaudio-bluetooth pamixer pavucontrol playerctl bluez bluez-utils
-
-# ui
-pacstrap -i /mnt sway swaylock xorg-server-xwayland wl-clipboard python-i3ipc gtk-theme-arc-gruvbox-git wlsunset waybar light slurp vulkan-intel vulkan-headers qt5-wayland wtype wlrctl swayr wofi
-
-# fonts
-pacstrap -i /mnt ttf-dejavu ttf-courier-prime ttf-liberation ttf-jetbrains-mono noto-fonts cantarell-fonts ttf-droid ttf-lato ttf-opensans ttf-signika xorg-fonts-misc otf-font-awesome ttf-joypixels nerd-fonts-noto-sans-mono
-
+# arch-chroot /mnt wget -O- https://www.github.com/maximbaz/arch-secure-boot/archive/1.5.0.tar.gz | tar -xvz -C /tmp/arch-secure-boot && cd /tmp/arch-secure-boot && make install
+arch-chroot /mnt wget https://www.github.com/maximbaz/arch-secure-boot/archive/1.5.0.tar.gz
+arch-chroot /mnt /bin/bash -c "tar -xvzf 1.5.0.tar.gz"
+arch-chroot /mnt /bin/bash -c "cd arch-secure-boot-1.5.0 && make install"
 # aur
-pacstrap -i /mnt aurpublish aurutils repoctl rebuild-detector
-
-# git
-pacstrap -i /mnt git git-delta meld tig
-
-# dev tools
-pacstrap -i /mnt neovim prettier dos2unix editorconfig-core-c docker docker-compose direnv teehee strace fzf visidata
-
-# shell dev
-pacstrap -i /mnt bash-language-server checkbashisms shellcheck shfmt bash-completion
-
-# python dev
-pacstrap -i /mnt python-lsp-server python-black python-pip python-pylint yapf bpython
-
-# go dev
-pacstrap -i /mnt go go-tools gopls revive staticcheck
-
-# js dev
-pacstrap -i /mnt yarn
-
-# rust dev
-pacstrap -i /mnt rust rust-analyzer
-
-# c dev
-pacstrap -i /mnt meson
+# pacstrap -i /mnt aurpublish aurutils repoctl rebuild-detector
 
 # lua dev
 # pacstrap -i /mnt stylua-bin
 
-# spell
-pacstrap -i /mnt aspell-en aspell-de
-
-# android
-pacstrap -i /mnt android-tools android-udev
-
-# terminal
-pacstrap -i /mnt kitty zsh lscolors-git
-
-# passwords
-pacstrap -i /mnt pass pwgen msitools browserpass-chromium browserpass-firefox gnome-keyring libgnome-keyring
-
-# email
-pacstrap -i /mnt isync msmtp neomutt urlscan goimapnotify mutt-ics w3m
-
-# browsers
-pacstrap -i /mnt qutebrowser python-adblock chromium-widevine pdfjs python-tldextract intel-media-driver chromium firefox
-
-# screenshots & gifs & desktop sharing
-pacstrap -i /mnt grim swappy wf-recorder v4l2loopback-dkms
-
 # media
 #pacstrap -i /mnt xdg-desktop-portal-wlr gst-plugin-pipewire pipewire pipewire-alsa pipewire-jack pipewire-media-session pipewire-pulse
-pacstrap -i /mnt xdg-desktop-portal-wlr wireplumber
 
-# video
-pacstrap -i /mnt mpv mpv-mpris ffmpeg yt-dlp aria2
-
-# kubernetes
-pacstrap -i /mnt kubectl kubectx
-
-# virtual machines
-pacstrap -i /mnt libvirt virt-manager qemu dnsmasq ebtables edk2-ovmf
-
-# misc
-pacstrap -i /mnt gimp krita hugo qalculate-gtk libreoffice-fresh scli python-urwid_readline urlwatch mkcert
 
 echo -e "\n### Generating base config files"
 ln -sfT dash /mnt/usr/bin/sh
@@ -314,11 +223,12 @@ echo "en_US.UTF-8 UTF-8" >>/mnt/etc/locale.gen
 echo "de_DE.UTF-8 UTF-8" >>/mnt/etc/locale.gen
 ln -sf /usr/share/zoneinfo/Europe/Berlin /mnt/etc/localtime
 arch-chroot /mnt locale-gen
+# add encrypt-dh to hooks once mkinitcpio-encrypt-detached-header is installed
 cat <<EOF >/mnt/etc/mkinitcpio.conf
 MODULES=()
 BINARIES=()
 FILES=()
-HOOKS=(base consolefont udev autodetect modconf block encrypt-dh filesystems keyboard)
+HOOKS=(base consolefont udev autodetect modconf block filesystems keyboard)
 EOF
 arch-chroot /mnt mkinitcpio -p linux
 arch-chroot /mnt arch-secure-boot initial-setup
@@ -338,7 +248,7 @@ echo "$user:$password" | arch-chroot /mnt chpasswd
 arch-chroot /mnt passwd -dl root
 
 echo -e "\n### Setting permissions on the custom repo"
-arch-chroot /mnt chown -R "$user:$user" "/var/cache/pacman/${user}-local/"
+# arch-chroot /mnt chown -R "$user:$user" "/var/cache/pacman/${user}-local/"
 
 if [ "${user}" = "hstct" ]; then
   echo -e "\n### Cloning dotfiles"
