@@ -110,7 +110,8 @@ luks_header_device=$(get_choice "Installation" "Select disk to write LUKS header
 clear
 
 echo -e "\n### Setting up fastest mirrors"
-reflector --latest 30 --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --latest 30 --sort rate --save /etc/pacman.d/mirrorlist
+reflector --country Austria,Belgium,France,Germany --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 echo -e "\n### Setting up partitions"
 umount -R /mnt 2>/dev/null || true
