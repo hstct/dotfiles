@@ -54,6 +54,12 @@ tmpd() { cd "$(mktemp -d -t "${1:-tmp}.XXXXXXXXXX")" }
 
 x() { PAGER="less -+F" xplr | IFS= read -r dir && cd -- "${dir:-.}" }
 
+## translate
+
+ger() { [[ $# == 1 ]] && cat "$1" | trans -b :de }
+
+alias ttg='trans -b :de'
+
 ## tmux
 
 alias ta='tmux attach -t'
