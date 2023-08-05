@@ -117,6 +117,7 @@ alias ot='oci test -p'
 alias ogc='oci generate-client -i'
 alias op='oci pulp'
 alias ops='op show --href'
+alias orp='oci exec s6-svc -r /var/run/service/pulpcore-worker\@1 && oci exec s6-svc -r /var/run/service/pulpcore-worker\@2'
 
 alias s3oci='oci-env -e pminio.env'
 alias s3ocb='s3oci compose build'
