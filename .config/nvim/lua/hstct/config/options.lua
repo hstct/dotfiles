@@ -8,15 +8,12 @@ o.updatetime = 200
 
 o.jumpoptions = "view"
 
--- Stable buffer content on window open/close events.
-o.splitkeep = "screen"
-
 o.scrolloff = 8
 
 o.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
 
 o.number = true
-o.numberwidth = 5
+o.numberwidth = 3
 o.relativenumber = true
 o.signcolumn = "yes:2"
 o.cursorline = true
@@ -49,4 +46,9 @@ o.showmode = false
 g.mapleader = " "
 g.maplocalleader = " "
 
-g.python3_host_prog = "/sbin/python3"
+g.loaded_python3_provider = 1
+g.loaded_node_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_ruby_provider = 0
+
+vim.opt.diffopt:append("linematch:60")
