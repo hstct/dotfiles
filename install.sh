@@ -175,6 +175,13 @@ mount -o noatime,nodiratime,compress=zstd,subvol=snapshots /dev/mapper/luks /mnt
 #
 # repo-add "/mnt/var/cache/pacman/${user}-local/${user}-local.db.tar"
 #
+cat >>/etc/pacman.conf <<EOF
+[maximbaz]
+Server = https://pkgbuild.com/~maximbaz/repo/x86_64
+
+[options]
+CacheDir = /mnt/var/cache/pacman/pkg
+EOF
 # if ! grep "${user}" /etc/pacman.conf >/dev/null; then
 #   cat >>/etc/pacman.conf <<EOF
 # [${user}-local]
@@ -192,7 +199,7 @@ mount -o noatime,nodiratime,compress=zstd,subvol=snapshots /dev/mapper/luks /mnt
 echo -e "\n### Installing packages"
 
 # base (mkinitcpio-encrypt-detached-header, arch-secure-boot, udiskie-dmenu-git, vimiv-qt, webwormhole-git, overdue, gtk-theme-arc-gruvbox-git wlsunset, wlrctl swayr, ttf-courier-prime, ttf-signika, nerd-fonts-noto-sans-mono, lscolors-git, mutt-ics, chromium-widevine, python-urwid_readline)
-pacstrap -i /mnt base dash linux linux-firmware linux-headers linux-lts sbsigntools efibootmgr binutils edk2-shell snapper snap-pac kernel-modules-hook logrotate man-pages btrfs-progs htop vi posix autoconf automake bison fakeroot flex gcc gettext groff gzip libtool make pacman pkgconf sudo texinfo which pacman-contrib devtools reflector pkgstats intel-ucode terminus-font archlinux-keyring progress gocryptfs ntfs-3g sshfs udiskie xplr ncdu croc bat exa fd ripgrep ripgrep-all tree trash-cli imagemagick jq dfrs zathura-pdf-mupdf pdftk inotify-tools xournalpp bfs lftp lbzip2 pigz pixz p7zip unrar unzip zip iwd nftables iptables-nft bandwhich net-tools nmap openbsd-netcat dog mtr sipcalc wget rsync openssh curlie speedtest-cli wireguard-tools systemd-resolvconf vnstat proxychains-ng networkmanager network-manager-applet networkmanager-openvpn arch-audit ccid pam-u2f yubikey-touch-detector usbguard pinentry gcr checksec polkit-gnome earlyoom systembus-notify fwupd tlp throttled dmidecode upower acpi bolt pamixer pavucontrol playerctl bluez bluez-utils sway swaylock xorg-server-xwayland wl-clipboard python-i3ipc waybar light slurp vulkan-intel vulkan-headers qt5-wayland wtype wofi ttf-dejavu ttf-liberation ttf-jetbrains-mono noto-fonts cantarell-fonts ttf-droid ttf-lato ttf-opensans xorg-fonts-misc otf-font-awesome ttf-joypixels git git-delta meld tig neovim prettier dos2unix editorconfig-core-c podman podman-compose direnv strace fzf visidata bash-language-server checkbashisms shellcheck shfmt bash-completion python-lsp-server python-black python-pip python-pylint yapf bpython go go-tools gopls revive staticcheck yarn rust rust-analyzer meson aspell-en aspell-de android-tools android-udev kitty zsh pass pwgen msitools browserpass-chromium browserpass-firefox gnome-keyring libgnome-keyring isync msmtp neomutt urlscan goimapnotify w3m qutebrowser python-adblock pdfjs python-tldextract intel-media-driver chromium firefox grim swappy wf-recorder v4l2loopback-dkms xdg-desktop-portal-wlr wireplumber mpv mpv-mpris ffmpeg yt-dlp aria2 libvirt virt-manager qemu dnsmasq ebtables edk2-ovmf gimp krita  qalculate-gtk libreoffice-fresh mkcert
+pacstrap -i /mnt base dash linux linux-firmware linux-headers linux-lts sbsigntools efibootmgr mkinitcpio-encrypt-detached-header binutils edk2-shell snapper snap-pac kernel-modules-hook logrotate man-pages btrfs-progs htop vi posix autoconf automake bison fakeroot flex gcc gettext groff gzip libtool make pacman pkgconf sudo texinfo which pacman-contrib devtools reflector pkgstats intel-ucode terminus-font archlinux-keyring progress gocryptfs ntfs-3g sshfs udiskie xplr ncdu croc bat exa fd ripgrep ripgrep-all tree trash-cli imagemagick jq dfrs zathura-pdf-mupdf pdftk inotify-tools xournalpp bfs lftp lbzip2 pigz pixz p7zip unrar unzip zip iwd nftables iptables-nft bandwhich net-tools nmap openbsd-netcat dog mtr sipcalc wget rsync openssh curlie speedtest-cli wireguard-tools systemd-resolvconf vnstat proxychains-ng networkmanager network-manager-applet networkmanager-openvpn arch-audit ccid pam-u2f yubikey-touch-detector usbguard pinentry gcr checksec polkit-gnome earlyoom systembus-notify fwupd tlp throttled dmidecode upower acpi bolt pamixer pavucontrol playerctl bluez bluez-utils sway swaylock xorg-server-xwayland wl-clipboard python-i3ipc waybar light slurp vulkan-intel vulkan-headers qt5-wayland wtype wofi ttf-dejavu ttf-liberation ttf-jetbrains-mono noto-fonts cantarell-fonts ttf-droid ttf-lato ttf-opensans xorg-fonts-misc otf-font-awesome ttf-joypixels git git-delta meld tig neovim prettier dos2unix editorconfig-core-c podman podman-compose direnv strace fzf visidata bash-language-server checkbashisms shellcheck shfmt bash-completion python-lsp-server python-black python-pip python-pylint yapf bpython go go-tools gopls revive staticcheck yarn rust rust-analyzer meson aspell-en aspell-de android-tools android-udev kitty zsh pass pwgen msitools browserpass-chromium browserpass-firefox gnome-keyring libgnome-keyring isync msmtp neomutt urlscan goimapnotify w3m qutebrowser python-adblock pdfjs python-tldextract intel-media-driver chromium firefox grim swappy wf-recorder v4l2loopback-dkms xdg-desktop-portal-wlr wireplumber mpv mpv-mpris ffmpeg yt-dlp aria2 libvirt virt-manager qemu dnsmasq ebtables edk2-ovmf gimp krita  qalculate-gtk libreoffice-fresh mkcert lscolors-git mutt-ics
 
 # arch-chroot /mnt wget -O- https://www.github.com/maximbaz/arch-secure-boot/archive/1.5.0.tar.gz | tar -xvz -C /tmp/arch-secure-boot && cd /tmp/arch-secure-boot && make install
 arch-chroot /mnt wget https://www.github.com/maximbaz/arch-secure-boot/archive/1.5.0.tar.gz
@@ -229,7 +236,7 @@ cat <<EOF >/mnt/etc/mkinitcpio.conf
 MODULES=()
 BINARIES=()
 FILES=()
-HOOKS=(base consolefont udev autodetect modconf block filesystems keyboard)
+HOOKS=(base consolefont udev autodetect modconf block encrypt-dh filesystems keyboard)
 EOF
 arch-chroot /mnt mkinitcpio -p linux
 arch-chroot /mnt arch-secure-boot initial-setup
