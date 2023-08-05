@@ -105,7 +105,7 @@ setopt IGNORE_EOF
 export DIRENV_LOG_FORMAT=
 export FZF_DEFAULT_OPTS="--reverse --multi"
 export SYSTEMD_LESS="${LESS}S"
-export ZK_NOTEBOOK_DIR=$HOME/Notes
+export ZK_NOTEBOOK_DIR=$HOME/.local/wiki
 
 ###
 
