@@ -17,6 +17,8 @@ unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
 
+map l follow
+
 map z zoom in
 map Z zoom out
 
