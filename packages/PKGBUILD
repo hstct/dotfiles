@@ -102,7 +102,6 @@ depends=(
   'xournalpp'
   'bfs'
   'lftp'
-  'nextcloud-client'
 
   # archiving
   'lbzip2'
@@ -128,6 +127,7 @@ depends=(
   'rsync'
   'openssh'
   'curlie'
+  'httpie'
   'speedtest-cli'
   'wireguard-tools'
   'systemd-resolvconf'
@@ -162,13 +162,11 @@ depends=(
   'dmidecode'
   'upower'
   'acpi'
-  'iriunwebcam-bin'
   'bolt'
+  'thermald'
+  'lm_sensors'
 
   # audio
-  'pulseaudio'
-  'pulseaudio-alsa'
-  'pulseaudio-bluetooth'
   'pamixer'
   'pavucontrol'
   'playerctl'
@@ -212,7 +210,6 @@ depends=(
   'otf-font-awesome'
   'ttf-jetbrains-mono'
   'ttf-font-awesome'
-  'nerd-fonts-jetbrains-mono'
 
   # aur
   'aurpublish'
@@ -224,6 +221,7 @@ depends=(
   'git'
   'git-delta'
   'meld'
+  'github-cli'
 
   # dev tools
   'neovim'
@@ -233,15 +231,12 @@ depends=(
   'eslint_d'
   'dos2unix'
   'editorconfig-core-c'
-  'docker'
-  'docker-compose'
+  'podman'
+  'podman-compose'
+  'aardvark-dns'
   'direnv'
-  'terraform'
-  'terraform-ls'
-  'teehee'
   'strace'
   'fzf'
-  'visidata'
   'postgresql-libs'
   'ansible'
   'tmux'
@@ -277,6 +272,9 @@ depends=(
   # rust dev
   'rust'
   'rust-analyzer'
+
+  # ruby
+  'ruby'
 
   # c dev
   'meson'
@@ -326,7 +324,6 @@ depends=(
   'intel-media-driver'
   'chromium'
   'firefox'
-  'firefox-tridactyl-native'
 
   # screenshots & gifs & desktop sharing
   'grim'
@@ -344,13 +341,9 @@ depends=(
   # video
   'mpv'
   'mpv-mpris'
-  # 'ffmpeq'
+  'ffmpeq'
   'yt-dlp'
   'aria2'
-
-  # kubernetes
-  'kubectl'
-  'kubectx'
 
   # virtual machines
   'libvirt'
@@ -362,18 +355,14 @@ depends=(
   'vagrant'
 
   # misc
-  'krita'
   'gimp'
   'qalculate-gtk'
   'libreoffice-fresh'
   'newsboat'
-  'scli'
   'tealdeer'
-  'rocketchat-client-bin'
-  'webcord'
-  'element-desktop'
   'weechat'
   'python-urwid_readline'
-  'urlwatch'
   'zk'
+  'translate-shell'
+  'obsidian'
 )
