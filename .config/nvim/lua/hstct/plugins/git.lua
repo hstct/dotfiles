@@ -5,8 +5,6 @@ local has_git_dir = function()
 end
 
 return {
-    { "tpope/vim-fugitive", cond = has_git_dir },
-    { "tpope/vim-rhubarb",  cond = has_git_dir, dependencies = { "tpope/vim-fugitive" } },
     {
         "lewis6991/gitsigns.nvim",
         event = "BufReadPre",
