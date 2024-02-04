@@ -3,6 +3,7 @@ Name = wlan0
 
 [Network]
 DHCP = yes
+DNS = 8.8.8.8 8.8.4.4
 Domains = ~lan
 
 [DHCP]
