@@ -25,7 +25,8 @@ return {
             -- "tsserver",
             "lua_ls",
             "pyright",
-            -- "solargraph",
+            "gopls",
+            "solargraph",
         })
         lsp.nvim_workspace()
 
