@@ -85,13 +85,13 @@ copy "etc/systemd/logind.conf.d/override.conf"
 copy "etc/systemd/network/50-wired.network"
 copy "etc/systemd/resolved.conf.d/dnssec.conf"
 copy "etc/systemd/system/getty@tty1.service.d/override.conf"
-copy "etc/systemd/system/usbguard.service.d/override.conf"
+#copy "etc/systemd/system/usbguard.service.d/override.conf"
 copy "etc/systemd/system/reflector.service"
 copy "etc/systemd/system/reflector.timer"
 copy "etc/systemd/system/system-dotfiles-sync.service"
 copy "etc/systemd/system/system-dotfiles-sync.timer"
 copy "etc/systemd/system.conf.d/kill-fast.conf"
-copy "etc/usbguard/usbguard-daemon.conf" 600
+#copy "etc/usbguard/usbguard-daemon.conf" 600
 copy "etc/systemd/network/20-wireless.network"
 
 #if [[ $HOSTNAME == home ]]; then
