@@ -3,6 +3,8 @@ start_directory: ~/dev/oci/
 windows:
   - window_name: oci_env
     start_directory: oci_env
+    shell_command_before:
+      - source ~/.local/state/python/venvs/oci/bin/activate
     focus: true
     panes:
       - shell_command:
