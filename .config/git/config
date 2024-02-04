@@ -28,7 +28,13 @@
 [includeIf "gitdir:~/.password-store/"]
   path = ~/.config/git/home
 
+[includeIf "gitdir:~/.local/share/pass/"]
+  path = ~/.config/git/home
+
 [includeIf "gitdir:~/Documents/"]
+  path = ~/.config/git/home
+
+[includeIf "gitdir:~/Wiki/"]
   path = ~/.config/git/home
 
 [include]

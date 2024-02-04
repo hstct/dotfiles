@@ -2,8 +2,8 @@ __pycache__
 tags
 *.antigen-compat
 *.zwc
-*.tar
-*.tar.*
+#*.tar
+# *.tar.*
 *.log
 .magic.mgc
 .uuid
