@@ -28,10 +28,6 @@ return {
                 "typescript",
                 "yaml",
             },
-            context_commentstring = {
-                enable = true,
-                enable_autocmd = false,
-            },
             textobjects = {
                 select = {
                     enable = true,
@@ -77,4 +73,5 @@ return {
         event = "BufReadPost",
     },
     { "nvim-treesitter/nvim-treesitter-textobjects", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+    { "nvim-ts-context-commentstring", opts = { enable_autocmd = false }},
 }
